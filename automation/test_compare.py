@@ -5,6 +5,7 @@
 # @Email   : 1305037577@qq.com
 # @File    : test_compare.py.py
 # @Software: PyCharm
+
 def test_greater():
     num=100
     assert num > 100
