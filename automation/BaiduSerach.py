@@ -10,7 +10,6 @@ import time
 class BaiduSerach(object):
     driver = webdriver.Edge();
 
-
     def open_baidu(self):
         self.driver.get(r'https://www.baidu.com/')
         time.sleep(1)
