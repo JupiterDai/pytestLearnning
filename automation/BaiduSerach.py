@@ -7,9 +7,9 @@
 # @Software: PyCharm
 from selenium import webdriver
 import time
+
 class BaiduSerach(object):
     driver = webdriver.Edge();
-
     def open_baidu(self):
         self.driver.get(r'https://www.baidu.com/')
         time.sleep(1)
@@ -26,4 +26,5 @@ class BaiduSerach(object):
 baidu = BaiduSerach();
 baidu.open_baidu()
 baidu.test_serach()
+baidu.driver.close()
 
