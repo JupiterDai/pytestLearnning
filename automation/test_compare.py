@@ -8,7 +8,7 @@
 import pytest
 
 
-def test_greater():
+def test_greater(ini):
     num = 100
     assert num > 100
 

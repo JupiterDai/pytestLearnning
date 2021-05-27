@@ -7,3 +7,6 @@
 # @Software: PyCharm
 import pytest
 
+@pytest.fixture(scope='session')
+def  ini():
+    print('初始化')
