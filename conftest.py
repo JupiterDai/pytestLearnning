@@ -10,3 +10,4 @@ import pytest
 @pytest.fixture(scope='session')
 def  ini():
     print('初始化')
+    yield print('恢复')
