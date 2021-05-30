@@ -9,4 +9,4 @@
 import pytest
 
 if __name__ == '__main__':
-    pytest.main(['/automation/test_fixtureuse.py'])
+    pytest.main(['-v','automation/test_fixtureuse.py'])

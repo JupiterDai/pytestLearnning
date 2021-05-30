@@ -7,11 +7,19 @@
 # @Software: PyCharm
 import pytest
 
-@pytest.fixture(scope='session')
+@pytest.fixture
 def  ini():
     print('初始化')
     yield print('恢复')
 
-@pytest.fixture(scope='session')
+@pytest.fixture
 def  login():
     print('login正在被调用')
+
+@pytest.fixture()
+def  create():
+    print('正在调用create')
+
+@pytest.fixture(autouse=True)
+def  demo():
+    print('==auto==')
