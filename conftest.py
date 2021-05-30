@@ -11,3 +11,7 @@ import pytest
 def  ini():
     print('初始化')
     yield print('恢复')
+
+@pytest.fixture(scope='session')
+def  login():
+    print('login正在被调用')

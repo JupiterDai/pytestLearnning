@@ -1,12 +1,12 @@
 #!/usr/bin/python3.9
 # -*- coding: utf-8 -*-
-# @Time    : 2021/5/19 14:53
+# @Time    : 2021/5/31 6:08
 # @Author  : Denny
 # @Email   : 1305037577@qq.com
-# @File    : main.py
+# @File    : test_fixtureuse.py
 # @Software: PyCharm
-
 import pytest
 
-if __name__ == '__main__':
-    pytest.main(['/automation/test_fixtureuse.py'])
+
+def test_login(login):
+    print('调用login')
