@@ -87,7 +87,8 @@ pytest -q -m "not xinlang" automation/test_markDemo.py
 pytest -q -m "xinlang or weibo" automation/test_markDemo.py
 
 ```
-![](./assets/README-1622504426950.png)
+![11](./assets/README-1622504652165.png)
+
 
 
 
