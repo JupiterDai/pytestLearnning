@@ -24,6 +24,7 @@ pytest默认是搜索执行当前目录下的所有用例，当pytest.ini配置�
 testpaths = automation/test_square.py<br/>
 
 ### pytest command扩充 <br/>
+
 运行某个模块里面的某个函数，或者某个类，某个类里面的方法.<br/>
 ```
 pytest -v [filename].py::[TestClass]::[Testmethod]
@@ -42,7 +43,10 @@ def test_login2(login):
 ```
 ![image](.Readme_images/image.png)
 
--m 标记表达式
+#### -m 标记表达式
+```angular2html
+pytest -m  less
+```
 
 
 
