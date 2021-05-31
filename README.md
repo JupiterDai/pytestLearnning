@@ -45,8 +45,49 @@ def test_login2(login):
 
 #### -m 标记表达式
 ```angular2html
-pytest -m  less
+pytest -m + [markname] + [filename].py
 ```
+可以通过mark装饰器对特定的用例进行标记。从而达到分组执行用例的效果。
+```python
+@pytest.mark.weibo
+def test_weibo():
+    print("测试微博")
+
+
+@pytest.mark.toutiao
+def test_toutiao():
+    print("测试头条")
+
+
+@pytest.mark.toutiao
+def test_toutiao1():
+    print("再次测试头条")
+
+
+@pytest.mark.xinlang
+class TestClass:
+    def test_method(self):
+        print("测试新浪")
+```
+![](./assets/README-1622503862485.png)
+
+注意这里需要在pytest.ini里定义一下我们的mark标记名字。不然会有告警。
+```
+[pytest]
+markers =
+    less:its ok
+    xinlang:xinlang
+    weibo:weibo
+    toutiao:toutiao
+```
+```
+排除一组用例取反在标记名前面加not就可以了
+pytest -q -m "not xinlang" automation/test_markDemo.py 
+执行多个标记组用 or连接就好
+pytest -q -m "xinlang or weibo" automation/test_markDemo.py
+
+```
+![](./assets/README-1622504426950.png)
 
 
 
