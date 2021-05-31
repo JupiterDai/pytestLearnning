@@ -1,5 +1,5 @@
 # Pytest<br/>
-## 1.pytest用例的执行方式<br/>
+## 1.pytest用例的执行方 式<br/>
 (1)命令行方式直接用pytest执行<br/>
 pytest [-vs] [filename]<br/>
 -v:显示用例执行的详细信息
@@ -40,4 +40,17 @@ def test_login2(login):
     print('调用login')
     assert flag==1
 ```
-![](.README_images/bcf567b5.png)
+![image](.Readme_images/image.png)
+
+```text
+(venv) C:\Users\13050\PycharmProjects\pytestLearnning>pytest -q  automation/test_fixtureuse.py::TestClass::test_gg1
+.                                                                                                                                                [100%]
+1 passed in 0.01s
+
+(venv) C:\Users\13050\PycharmProjects\pytestLearnning>pytest -q  automation/test_fixtureuse.py::test_login2
+.                                                                                                                                                [100%]
+1 passed in 0.01s
+
+
+```
+
