@@ -20,6 +20,6 @@ def  login():
 def  create():
     print('正在调用create')
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(autouse=False)
 def  demo():
     print('==auto==')

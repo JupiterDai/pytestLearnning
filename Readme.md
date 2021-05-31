@@ -8,3 +8,17 @@ Tips:如果只执行 pytest ，会查找当前目录及其子目录下以  test_
 列子:<br/>
 ![](.Readme_images/589c7cb0.png)<br/>
 如果只以pytest执行就会看到所有用例全部被执行。<br/>
+![](.Readme_images/a647d28e.png)<br/>
+可以看到我这里加上了具体的文件路径就执行了对应的测试。<br/>
+(2)main函数方式<br/>
+```python
+import pytest
+
+if __name__ == '__main__':
+    pytest.main(['-v','automation/test_fixtureuse.py'])
+
+```
+(3)在pytest.ini文件中配置textpaths<br/>
+pytest默认是搜索执行当前目录下的所有用例，当pytest.ini配置了testpaths = test_case/lxk或testpaths = test_case/lxk/test_001_case.py就会只执行当前配置的文件夹下或文件里的用例，这样我们就可以灵活的控制运行需要测试的用例了，可配置多个，空格隔开<br/>
+例子
+testpaths = automation/test_square.py
