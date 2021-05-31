@@ -42,15 +42,3 @@ def test_login2(login):
 ```
 ![image](.Readme_images/image.png)
 
-```text
-(venv) C:\Users\13050\PycharmProjects\pytestLearnning>pytest -q  automation/test_fixtureuse.py::TestClass::test_gg1
-.                                                                                                                                                [100%]
-1 passed in 0.01s
-
-(venv) C:\Users\13050\PycharmProjects\pytestLearnning>pytest -q  automation/test_fixtureuse.py::test_login2
-.                                                                                                                                                [100%]
-1 passed in 0.01s
-
-
-```
-
