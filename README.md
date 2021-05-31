@@ -40,4 +40,4 @@ def test_login2(login):
     print('调用login')
     assert flag==1
 ```
-![](.README_images/9a29fb85.png)<br/>
+![](.README_images/56f6462f.jpeg)<br/>
