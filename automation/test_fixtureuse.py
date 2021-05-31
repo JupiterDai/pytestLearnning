@@ -8,6 +8,16 @@
 
 
 import pytest
+
+class TestClass():
+    flag = 1
+    def test_gg1(self):
+        print('gg')
+    assert flag == 1
+
+
+
+
 def test_login2(login):
     flag = 1
     print('调用login')

@@ -20,5 +20,24 @@ if __name__ == '__main__':
 ```
 (3)在pytest.ini文件中配置textpaths<br/>
 pytest默认是搜索执行当前目录下的所有用例，当pytest.ini配置了testpaths = test_case/lxk或testpaths = test_case/lxk/test_001_case.py就会只执行当前配置的文件夹下或文件里的用例，这样我们就可以灵活的控制运行需要测试的用例了，可配置多个，空格隔开<br/>
-例子
-testpaths = automation/test_square.py
+例子:<br/>
+testpaths = automation/test_square.py<br/>
+
+### pytest command扩充 <br/>
+运行某个模块里面的某个函数，或者某个类，某个类里面的方法.<br/>
+```
+pytest -v [filename].py::
+```
+```python
+class TestClass():
+    flag = 1
+    def test_gg1(self):
+        print('gg')
+    assert flag == 1
+
+def test_login2(login):
+    flag = 1
+    print('调用login')
+    assert flag==1
+```
+![](.README_images/9a29fb85.png)<br/>
