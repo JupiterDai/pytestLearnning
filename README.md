@@ -26,7 +26,7 @@ testpaths = automation/test_square.py<br/>
 ### pytest command扩充 <br/>
 运行某个模块里面的某个函数，或者某个类，某个类里面的方法.<br/>
 ```
-pytest -v [filename].py::
+pytest -v [filename].py::[TestClass]::[Testmethod]
 ```
 ```python
 class TestClass():
@@ -40,4 +40,4 @@ def test_login2(login):
     print('调用login')
     assert flag==1
 ```
-![](.README_images/56f6462f.jpeg)<br/>
+![](.README_images/bcf567b5.png)
