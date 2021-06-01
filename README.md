@@ -89,6 +89,21 @@ pytest -q -m "xinlang or weibo" automation/test_markDemo.py
 ```
 ![11](./assets/README-1622504652165.png)
 
+##pytest  setup和teardown
+所有操作都可以写在conftest.py文件里
+```python
+import pytest
+@pytest.fixture()
+def  ini():
+    print('初始化')
+    yield print('恢复')
 
-
-
+@pytest.fixture
+def  reset():
+    yield  print('调用结束回复初始')
+```
+```
+初始化函数会在用例执行前开始运行，yield会在之后开始运行。前置函数不一定叫setup 名字可以自定义。两种操作可以写在一个函数里,也可以分开。
+pytest -vs  -m weibo automation/test_markDemo.py
+```
+![](./assets/README-1622505928049.png)

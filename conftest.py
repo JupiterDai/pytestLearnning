@@ -7,14 +7,14 @@
 # @Software: PyCharm
 import pytest
 
-@pytest.fixture
+@pytest.fixture()
 def  ini():
     print('初始化')
     yield print('恢复')
 
 @pytest.fixture
 def  login():
-    print('login正在被调用')
+    yield  print('调用结束回复初始')
 
 @pytest.fixture()
 def  create():

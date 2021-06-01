@@ -7,6 +7,6 @@
 # @Software: PyCharm
 import pytest
 
-@pytest.fixture()
+
 def prints():
     print('gg')

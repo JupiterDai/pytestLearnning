@@ -8,9 +8,8 @@
 #执行用例时候添加-m + markname,执行多个标记 -m 'name or name'
 import pytest
 
-
 @pytest.mark.weibo
-def test_weibo():
+def test_weibo(ini):
     print("测试微博")
 
 
