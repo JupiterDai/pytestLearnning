@@ -89,7 +89,7 @@ pytest -q -m "xinlang or weibo" automation/test_markDemo.py
 ```
 ![11](./assets/README-1622504652165.png)
 
-##pytest  fixture
+## pytest  fixture
 ```
 fixture中的重要参数scope决定了操作生效的范围。
 scop范围：function ，class ， module ， package 或 session .
