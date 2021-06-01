@@ -91,7 +91,8 @@ pytest -q -m "xinlang or weibo" automation/test_markDemo.py
 
 ##pytest  fixture
 ```
-
+fixture中的重要参数scope决定了操作生效的范围。
+scop范围：function ，class ， module ， package 或 session .
 ```
 所有操作都可以写在conftest.py文件里
 ```python
@@ -137,3 +138,35 @@ def test_weibo():
 pytest -vs  -m weibo automation/test_markDemo.py
 ```
 ![](./assets/README-1622506499340.png)
+
+## Pytest的插件
+### 失败重跑插件 pytest-rerunfailures
+```commandline
+环境前提
+以下先决条件才能使用pytest-rerunfailures
+
+Python 3.5, 最高 3.8, or PyPy3
+pytest 5.0或更高版本
+
+插件安装
+pip3 install pytest-rerunfailures
+命令行参数：--reruns n（重新运行次数），--reruns-delay m（等待运行秒数）
+装饰器参数：reruns=n（重新运行次数），reruns_delay=m（等待运行秒数）
+```
+### html报告生成插件  pytest html
+安装命令行:pip3 install pytest-html<br/>
+
+```commandline
+pytest --html=[reportfilename].html
+pytest -vs  -m weibo automation/test_markDemo.py  --html=report.html
+```
+![](./assets/README-1622507998504.png)
+
+```commandline
+合并CSS
+上面命令生成的报告，css是独立的，
+分享报告的时候样式会丢失，为了更好的分享发邮件展示报告，可以把css样式合并到html里
+```
+```commandline
+pytest --html=report.html --self-contained-html
+```
