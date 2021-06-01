@@ -9,7 +9,8 @@
 import pytest
 
 @pytest.mark.weibo
-def test_weibo(ini):
+@pytest.mark.usefixtures('ini')
+def test_weibo():
     print("测试微博")
 
 

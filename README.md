@@ -89,7 +89,10 @@ pytest -q -m "xinlang or weibo" automation/test_markDemo.py
 ```
 ![11](./assets/README-1622504652165.png)
 
-##pytest  setup和teardown
+##pytest  fixture
+```
+
+```
 所有操作都可以写在conftest.py文件里
 ```python
 import pytest
@@ -103,7 +106,34 @@ def  reset():
     yield  print('调用结束回复初始')
 ```
 ```
-初始化函数会在用例执行前开始运行，yield会在之后开始运行。前置函数不一定叫setup 名字可以自定义。两种操作可以写在一个函数里,也可以分开。
+初始化函数会在用例执行前开始运行，yield会在之后开始运行。
+命名方式灵活，不局限于 setup 和teardown 这几个命名
+conftest.py 配置里可以实现数据共享，不需要 import 就能自动找到fixture
+scope="module" 可以实现多个.py 跨文件共享前置
+scope="session" 以实现多个.py 跨文件使用一个 session 来完成多个用例
+ 。
+两种操作可以写在一个函数里,也可以分开。至于调用方式直接传参就好了。
 pytest -vs  -m weibo automation/test_markDemo.py
 ```
+```python
+import pytest
+
+@pytest.mark.weibo
+def test_weibo(ini):
+    print("测试微博")
+```
+
 ![](./assets/README-1622505928049.png)
+#### Tips:除了直接传参也可以用mark标记usefixtures加fixturename
+```python
+import pytest
+
+@pytest.mark.weibo
+@pytest.mark.usefixtures('ini')
+def test_weibo():
+    print("测试微博")
+```
+```commandline
+pytest -vs  -m weibo automation/test_markDemo.py
+```
+![](./assets/README-1622506499340.png)
